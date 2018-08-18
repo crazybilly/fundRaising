@@ -6,6 +6,9 @@ Author: Jake Tolbert
 Maintainer: Jake Tolbert <jtolbert@millikin.edu>
 Description: 
     Use four spaces when indenting paragraphs within the Description.
+Imports:
+    lubridate,
+    stringr
 License: GPL3
 Encoding: UTF-8
 LazyData: true
