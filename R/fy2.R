@@ -8,7 +8,7 @@
 #' @return a numeric value of fiscal years
 #' @export
 #'
-fy2  <- function(date,fy_start_month=7) {
+fy2  <- function(date = Sys.Date(),fy_start_month=7) {
 
   if(!is.character(date)&!lubridate::is.Date(date)&!lubridate::is.POSIXct(date)&!lubridate::is.POSIXlt(date)) {
     stop("Please use values formatted as dates or character strings with only numbers convertible to dates like '2017-07-01'")
