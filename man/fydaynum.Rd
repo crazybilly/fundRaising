@@ -4,10 +4,12 @@
 \alias{fydaynum}
 \title{Fiscal Year Day Number}
 \usage{
-fydaynum(x)
+fydaynum(x = Sys.Date(), ytd = TRUE)
 }
 \arguments{
 \item{x}{a date to convert to a numeric day of the fiscal year. Note that x should be of class "Date".}
+
+\item{yet}{a logical vector. If true only values for dates that are year-to-date will be returned.}
 }
 \value{
 a numeric value describing what day of the fiscal year x is.

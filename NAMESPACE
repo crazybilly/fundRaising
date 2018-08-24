@@ -3,3 +3,4 @@
 export(fy)
 export(fy2)
 export(fydaynum)
+export(longest_consecutive)

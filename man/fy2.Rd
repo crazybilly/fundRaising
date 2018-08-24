@@ -4,12 +4,12 @@
 \alias{fy2}
 \title{Calculate the fiscal year based on any starting month}
 \usage{
-fy2(date, fy_start_month = 7)
+fy2(date = Sys.Date(), fy_start_month = 7)
 }
 \arguments{
 \item{date}{a date-time object}
 
-\item{fy_start_month}{a number represeting the starting month for the fiscal year (defaults to 7 -- "July")}
+\item{fy_start_month}{a number representing the starting month for the fiscal year (defaults to 7 -- "July")}
 }
 \value{
 a numeric value of fiscal years
