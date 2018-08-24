@@ -9,9 +9,9 @@ longest_consecutive(data, ids, fys, fy_range = NA, mode = "append")
 \arguments{
 \item{data}{a data frame with donor ids and the fiscal year of gifts}
 
-\item{ids}{the column name that contains the constituent IDs}
+\item{ids}{an unquoted column name that contains the constituent IDs}
 
-\item{fys}{the column name that contains the fiscal year for gifts. If not present, run fy() or fy2().}
+\item{fys}{an unquote column name that contains the fiscal year for gifts. If not present, run fy() or fy2().}
 
 \item{fy_range}{the maximum consecutive giving streak to try to find. By default, this uses the maximum range given the fiscal years provided.}
 
