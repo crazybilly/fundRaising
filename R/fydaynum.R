@@ -1,7 +1,7 @@
 #' Fiscal Year Day Number
 #'
 #' @param x a date to convert to a numeric day of the fiscal year. Note that x should be of class "Date".
-#' @param yet a logical vector. If true only values for dates that are year-to-date will be returned.
+#' @param ytd a logical vector. If true, only values for dates that are year-to-date will be returned.
 #'
 #' @return a numeric value describing what day of the fiscal year x is.
 #' @export
@@ -26,7 +26,11 @@ fydaynum  <- function(x = Sys.Date(), ytd = TRUE){
     x_day <- ifelse(x_day <= today_day, x_day, NA)
 
     x_day
+
+  } else {
+    x_day
   }
+
 
 }
 

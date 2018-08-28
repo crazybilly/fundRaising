@@ -9,6 +9,6 @@
 #'
 fy  <- function(x) {
 
-  ifelse(lubridate::month(x) >= 7, year(x) +1, year(x) )
+  ifelse(lubridate::month(x) >= 7, lubridate::year(x) +1, lubridate::year(x) )
 
 }

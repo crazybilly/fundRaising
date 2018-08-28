@@ -7,12 +7,12 @@
 fy2(date = Sys.Date(), fy_start_month = 7)
 }
 \arguments{
-\item{date}{a date-time object}
+\item{date}{a vector of date or date-times}
 
-\item{fy_start_month}{a number representing the starting month for the fiscal year (defaults to 7 -- "July")}
+\item{fy_start_month}{a number representing the starting month for the fiscal year (defaults to 7, ie. July)}
 }
 \value{
-a numeric value of fiscal years
+a numeric vector of fiscal years with the length of the date argument
 }
 \description{
 calculates the fiscal year based on an existing date
