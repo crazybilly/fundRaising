@@ -2,15 +2,17 @@
 % Please edit documentation in R/fy.R
 \name{fy}
 \alias{fy}
-\title{Calculate the MU fiscal year}
+\title{Calculate the fiscal year based on any starting month}
 \usage{
-fy(x)
+fy(date = Sys.Date(), fy_start_month = 7)
 }
 \arguments{
-\item{x}{a date-time object}
+\item{date}{a vector of date or date-times}
+
+\item{fy_start_month}{a number representing the starting month for the fiscal year (defaults to 7, ie. July)}
 }
 \value{
-a numeric value of fiscal years
+a numeric vector of fiscal years with the length of the date argument
 }
 \description{
 calculates the fiscal year based on an existing date
