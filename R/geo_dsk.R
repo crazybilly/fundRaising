@@ -8,7 +8,7 @@
 #' @export
 #'
 
-geo.dsk <- function(addr){
+geo_dsk <- function(addr){
   require(httr)
   require(rjson)
   
