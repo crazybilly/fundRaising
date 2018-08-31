@@ -11,9 +11,9 @@ Functions for Fundraising Analytics
 
 Functions to Add (based on 8/31/2018 call)
 - [ ] lybunt and sybunt finder 
-- [ ] general geocoding function using dsk
+- [ ] general geocoding function using dsk (https://www.reed.edu/data-at-reed/resources/R/geocoding.html)
 - [ ] fiscal year quarter function
-- [ ] prospects within radius
+- [ ] prospects within radius 
 - [ ] screening based on address and census data
 - [ ] giving consistency 
 - [ ] giving acceleration 
