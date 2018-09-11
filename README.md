@@ -16,6 +16,6 @@ Functions to Add (based on 8/31/2018 call)
 - [ ] fiscal year quarter function
 - [ ] prospects within radius 
 - [ ] screening based on address and census data
-- [ x ] giving consistency 
+- [x] giving consistency 
 - [ ] giving acceleration 
 
