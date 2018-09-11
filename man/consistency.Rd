@@ -14,7 +14,7 @@ consistency(data, id_col, fy_col, threshold = 1, alt_year = NA,
 
 \item{fy_col}{a column from the data frame containing fiscal years for gifts - column name should be unquoted (use the fy() function if fiscal years are not already in the data)}
 
-\item{threshold}{a numeric value for the minimum active years to consider - for example, if someone is a first time donor they will have 100% consistency to only include those that could have given at least 3 fiscal years, change threshold to 3}
+\item{threshold}{a numeric value for the minimum active years to consider - for example, if someone is a first time donor they will have 100 percent consistency to only include those that could have given at least 3 fiscal years, change threshold to 3}
 
 \item{alt_year}{a numeric value or a quoted column name from the data frame containing which fiscal years should be used for the lower bound of the active years range. By default, the minimum fiscal year for gifts will be used however graduation year could also be used or just any given fiscal year}
 
