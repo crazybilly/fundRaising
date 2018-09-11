@@ -2,6 +2,7 @@
 
 export(abbrdollars)
 export(cutgiving)
+export(consistency)
 export(fy)
 export(fydaynum)
 export(longest_consecutive)
