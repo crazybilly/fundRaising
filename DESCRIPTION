@@ -10,7 +10,8 @@ Imports:
     lubridate,
     stringr,
     dplyr,
-    purrr
+    purrr,
+    rlang
 License: GPL3
 Encoding: UTF-8
 LazyData: true
