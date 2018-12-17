@@ -37,3 +37,17 @@
 #' }
 #' @source \url{https://www.kaggle.com/michaelpawlus/fundraising-data}
 "small_data"
+
+#' Network Dataset
+#'
+#' A dataset containing 30 links between entities for exploring network
+#' relationships. This dataset is included with the book Data Science
+#' for Fundraising and is used with permission in this package.
+#'
+#' @format A data frame with 30 rows and 2 variables:
+#' \describe{
+#'   \item{from}{the starting point for the relationship}
+#'   \item{to}{the ending point for the relationship}
+#' }
+#' @source \url{https://www.kaggle.com/michaelpawlus/fundraising-data}
+"network_data"
