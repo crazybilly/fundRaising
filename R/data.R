@@ -51,3 +51,18 @@
 #' }
 #' @source \url{https://www.kaggle.com/michaelpawlus/fundraising-data}
 "network_data"
+
+#' Survey Responses
+#'
+#' A dataset containing 1263 survey responses where the survey responses
+#' are expressed as a single numeric value for every respondent. This dataset
+#' in included with the book Cool Data: A how-to guide... and is used with
+#' permission in this package.
+#'
+#' @format A data frame with 30 rows and 2 variables:
+#' \describe{
+#'   \item{ID Number}{the unique identifier for each survey taker}
+#'   \item{Survey Response}{a numeric value reflecting a survey response}
+#' }
+#' @source \url{https://www.kaggle.com/michaelpawlus/fundraising-data}
+"survey_data"
