@@ -66,3 +66,32 @@
 #' }
 #' @source \url{https://www.kaggle.com/michaelpawlus/fundraising-data}
 "survey_data"
+
+#' Donor Data 2
+#'
+#' A dataset containing 5000 alumni rows with a number of factors
+#' for creating a predictive model. This dataset in included with
+#' the book Cool Data: A how-to guide... and is used with
+#' permission in this package.
+#'
+#' @format A data frame with 5000 rows and 16 variables:
+#' \describe{
+#'   \item{ID Number}{the unique identifier for each alumnus}
+#'   \item{Lifetime HC}{the lifetime hard credit total for the alumnus}
+#'   \item{Email Present}{a binary flag to indicate if an email address is present}
+#'   \item{BusPhone Present}{a binary flag to indicate if a business phone is present}
+#'   \item{Grad Year}{the graduation year for the alumnus}
+#'   \item{Marital Status}{the marital status of th alumnus}
+#'   \item{SpouseID Present}{a binary flag to indicate if an ID is connected to this alumnus as a spouse}
+#'   \item{JobTitle Present}{a binary flag to indicate if a job title is present}
+#'   \item{VarsityAth Present}{a binary flag to indicate if the alumnus participated in varsity athletics}
+#'   \item{StudGovt Present}{a binary flag to indicate if the alumnus participated in student government}
+#'   \item{OtherStudActs Present}{a binary flag to indicate if the alumnus participated in other student activities}
+#'   \item{Greek Present}{a binary flag to indicate if the alumnus has Greek involvement}
+#'   \item{Prefix is Mr.}{a binary flag to indicate if the alumnus prefix is Mr}
+#'   \item{Prefix is Ms.}{a binary flag to indicate if the alumnus prefix is Ms}
+#'   \item{Prefix is Dr.}{a binary flag to indicate if the alumnus prefix is Dr}
+#'   \item{Prefix is Mrs.}{a binary flag to indicate if the alumnus prefix is Mrs}
+#' }
+#' @source \url{https://www.kaggle.com/michaelpawlus/fundraising-data}
+"donor_data2"
