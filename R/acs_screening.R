@@ -74,3 +74,48 @@ get_lat_lon <- function(x, address, name) {
 
   return(latlons)
 }
+
+#' Get a block id for every longitude and latitude value - a helper function that is iterated through to make a table
+#'
+#' @description pulls a block id values for a given set of coordinates
+#'
+#' @param lat a value for latitude
+#' @param lon a value for longitude
+#'
+#' @return block id value or values
+#' @export
+#'
+
+
+get_block_ids <- function(lat, lon) {
+  fcc <- "https://geo.fcc.gov/api/census/area?lat=%f&lon=%f&format=json"
+  fcc <- sprintf(fcc, lat, lon)
+  json <- read_html(fcc)
+  json <- fromJSON(fcc)
+
+  tibble (
+    block_id = json$results$block_fips,
+    fcc_lat = json$input$lat,
+    fcc_lon = json$input$lon
+  )
+
+}
+
+
+#' Iterate through get_block_ids to create a table of block ids - a list for now but a table soon
+#'
+#' @description creates a data frame with block ids generated from longitude and latitude values
+#'
+#' @param result a data frane output as a result of the get_lat_lon function containing a value for longitude and latitude labelled lon and lat respectively
+#'
+#' @return a data frame with block ids
+#' @export
+#'
+
+
+get_block_id_table <- function(result){
+
+  blocks <- map2(result$lat,result$lon,get_block_ids)
+  return(blocks)
+
+}
