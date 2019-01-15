@@ -132,3 +132,51 @@
 #' }
 #' @source \url{https://www.kaggle.com/michaelpawlus/fundraising-data}
 "donor_data"
+
+#' Mapping Data
+#'
+#' A dataset containing 300 constituent rows and 36 features.
+#' This dataset was provided by Michael Lasala as part of his
+#' 2018 DAS presentation and is used with permission here
+#'
+#' @format A data frame with 300 rows and 36 variables:
+#' \describe{
+#'   \item{ID}{the unique identifier for each constituent}
+#'   \item{Name}{the name of the constituent}
+#'   \item{AGE}{the age of the constituent}
+#'   \item{Age Bin}{the binned age group of the constituent}
+#'   \item{Gender}{the gender of the constituent}
+#'   \item{Affiliation}{the graduation year and degree for each constituent when applicable}
+#'   \item{DonorCode}{descriptive data regarding the connection between the constituent and the organization}
+#'   \item{Manager}{the staff member managing the relationship}
+#'   \item{Major}{the major studied by an alumnus when applicable}
+#'   \item{Address}{the address type indicator}
+#'   \item{City}{the address city}
+#'   \item{State}{the address state}
+#'   \item{Zip Code}{the address ZIP code}
+#'   \item{Job Title}{the job title for the constituent}
+#'   \item{Emploter}{the employer for the constituent}
+#'   \item{Annual Fund Rating}{a rating indicating how much to ask for annually}
+#'   \item{Major Gift Capacity}{a rating indicating the size of major gift this constituent is able to make}
+#'   \item{LOW_EGC}{a rnumeric value representing the low end of the Major Gift Capacity rating}
+#'   \item{HIGH_EGC}{a rnumeric value representing the high end of the Major Gift Capacity rating}
+#'   \item{Inclination}{a value indicating the liklihood of making a gift}
+#'   \item{Alumni Engagement}{a value indicating the involvement level of an alumnus when applicable}
+#'   \item{Stage}{the current stage of the major giving cycle for the constituent}
+#'   \item{Last Gift Date}{the date of the most recent gift}
+#'   \item{Last Gift Amount}{the amount of the most recent gift}
+#'   \item{FY'17 Giving}{the total amount given in fiscal year 2017}
+#'   \item{FY'16 Giving}{the total amount given in fiscal year 2016}
+#'   \item{FY'15 Giving}{the total amount given in fiscal year 2015}
+#'   \item{FY'14 Giving}{the total amount given in fiscal year 2014}
+#'   \item{FY'13 Giving}{the total amount given in fiscal year 2013}
+#'   \item{Lifetime Giving}{the total amount given by the constituent}
+#'   \item{Last Attempt Date}{the date of the last contact attempt}
+#'   \item{Last Contact Date}{the date of the last contact}
+#'   \item{Last Contact Type}{a value indicating the type of contact made most recently}
+#'   \item{Phone Count}{the number of phone calls with the constituent}
+#'   \item{FTF Visit Count}{the number of face to face visits with the constituent}
+#'   \item{Gift Count}{the number of gifts from the constituent}
+#' }
+#' @source \url{https://www.kaggle.com/michaelpawlus/fundraising-data}
+"mapping_data"
