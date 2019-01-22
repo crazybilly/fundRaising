@@ -9,12 +9,14 @@ fundRaising
 - `longest_consecutive()` - determine the longest consecutive giving streak for constituents
 - `consistency()` - the rate of fiscal years with a gift over the number of active years for a constituent
 - `cutgiving()` - bin giving in a coherent, easy to use way
+- `fy_quarters()` - calculate the fiscal quarter for all gifts based on the fiscal year start month
+- `get_lat_lon()` - create a table of longitude and latitude coordinates based on address data
 
 
 Functions to Add (based on 8/31/2018 call)
 - [ ] lybunt and sybunt finder 
-- [ ] general geocoding function using dsk (https://www.reed.edu/data-at-reed/resources/R/geocoding.html)
-- [ ] fiscal year quarter function
+- [x] general geocoding function using dsk (https://www.reed.edu/data-at-reed/resources/R/geocoding.html)
+- [x] fiscal year quarter function
 - [ ] prospects within radius 
 - [ ] screening based on address and census data
 - [x] assess giving consistency 
