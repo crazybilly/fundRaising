@@ -13,7 +13,8 @@ Imports:
     purrr,
     rlang,
     zipcode,
-    ggmap
+    ggmap,
+    tibble
 License: GPL3
 Encoding: UTF-8
 LazyData: true

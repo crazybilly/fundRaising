@@ -19,7 +19,7 @@ fydaynum  <- function(x = Sys.Date(), ytd = TRUE){
 
   if(ytd == TRUE){
 
-    this_fystart <- lubridate::ymd(paste0(fy2()-1, "-07-01" ))
+    this_fystart <- lubridate::ymd(paste0(fy()-1, "-07-01" ))
 
     today_day <- as.numeric( Sys.Date() - this_fystart) + 1
 
