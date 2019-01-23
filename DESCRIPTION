@@ -5,13 +5,16 @@ Version: 0.1.0
 Author: Jake Tolbert
 Maintainer: Jake Tolbert <jtolbert@millikin.edu>
 Description: 
-    Use four spaces when indenting paragraphs within the Description.
+    A collection of functions relevant to fundraising analytics
 Imports:
     lubridate,
     stringr,
     dplyr,
     purrr,
-    rlang
+    rlang,
+    zipcode,
+    ggmap,
+    tibble
 License: GPL3
 Encoding: UTF-8
 LazyData: true
