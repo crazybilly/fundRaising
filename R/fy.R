@@ -14,7 +14,8 @@ fy  <- function(date = Sys.Date(), fy_start_month = 7 ) {
     stop("Please use values formatted as dates or character strings with only numbers convertible to dates like '2017-07-01'")
   }
 
-  if(stringr::str_detect(date,"[:alpha:]")) {
+  ## there is probably a nicer way to do this but need a way to deal with missing values
+  if(any(as.logical(stringr::str_replace_na(stringr::str_detect(date,"[:alpha:]"),replacement = FALSE)))) {
     stop("Please use values formatted as dates or character strings with only numbers convertible to dates like '2017-07-01'")
   }
 
