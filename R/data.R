@@ -180,3 +180,21 @@
 #' }
 #' @source \url{https://www.kaggle.com/michaelpawlus/fundraising-data}
 "mapping_data"
+
+
+#' ZIP Code Data
+#'
+#' A dataset containing ZIP code data along with
+#' coordinates and cities that correspond to these
+#' ZIP codes
+#'
+#' @format A data frame with 44,336 rows and 5 variables:
+#' \describe{
+#'   \item{zip}{the 5 digit ZIP code}
+#'   \item{city}{the city for this ZIP code}
+#'   \item{state}{the state for this ZIP code}
+#'   \item{latitude}{the latitude coordinate for the center of a ZIP code}
+#'   \item{longitude}{the longitude coordinate for the center of a ZIP code}
+#' }
+#' @source \url{https://github.com/cran/zipcode}
+"zipcode"
