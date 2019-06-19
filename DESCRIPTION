@@ -14,7 +14,8 @@ Imports:
     rlang,
     zipcode,
     ggmap,
-    tibble
+    tibble,
+    reticulate
 License: GPL3
 Encoding: UTF-8
 LazyData: true

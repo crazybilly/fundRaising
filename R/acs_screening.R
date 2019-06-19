@@ -13,7 +13,7 @@
 make_full_name <- function(x, first_name_col, last_name_col){
   fn <- rlang::enexpr(first_name_col)
   ln <- rlang::enexpr(last_name_col)
-  x <- x %>% mutate(full_name = paste(!!fn, !!ln))
+  x <- x %>% dplyr::mutate(full_name = paste(!!fn, !!ln))
   return(x)
 }
 
@@ -32,11 +32,13 @@ make_full_name <- function(x, first_name_col, last_name_col){
 
 make_concat_address <- function(x, addr_line_col, addr_city_col, addr_postal_col){
   ##load("data/zipcode.rda")
+  ## think of a way to remove the zipcode object and not return to users
   data("zipcode")
   adln <- rlang::enexpr(addr_line_col)
   adct <- rlang::enexpr(addr_city_col)
   adpc <- rlang::enexpr(addr_postal_col)
   x <- x %>%
+    ## remove columns that are made if they exist?
     dplyr::mutate(short_zip = stringr::str_sub(!!adpc,1,5)) %>% ## convert any plus-4s to 5 digit ZIPs
     dplyr::left_join(zipcode, by = c("short_zip" = "zip")) %>% # join zipcodes to get the state abbr
     dplyr::mutate(concat_add = stringr::str_c(!!adln, !!adct, state, sep=",")) # create a concat addr, city, state
@@ -56,21 +58,20 @@ make_concat_address <- function(x, addr_line_col, addr_city_col, addr_postal_col
 #'
 
 get_lat_lon <- function(x, address, name) {
+
+  gc <- reticulate::import("geocoder")  ## almost sure this is not where we want this not sure where to put it yet
+
   addr <- rlang::enexpr(address)
   nm <- rlang::enexpr(name)
   addr_vec <- x %>% dplyr::select(!!addr) %>% unname() %>% purrr::as_vector()
   nm_vec <- x %>% dplyr::select(!!nm) %>% unname() %>% purrr::as_vector()
-  result <- ggmap::geocode(addr_vec, output = "latlona", source = "dsk")
-
-  result <- result %>%
-    dplyr::mutate_at(1:2, ~as.numeric(.)) %>%
-    dplyr::mutate(geo_add = as.character(address))
+  result <- gc$arcgis(address)$json
 
   latlons <- tibble(
     name = nm_vec,
-    lon = result$lon,
+    lon = result$lng,
     lat = result$lat,
-    geo_add = result$geo_add
+    geo_add = result$address
   )
 
   return(latlons)
