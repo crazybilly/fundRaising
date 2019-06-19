@@ -59,13 +59,13 @@ make_concat_address <- function(x, addr_line_col, addr_city_col, addr_postal_col
 
 get_lat_lon <- function(x, address, name) {
 
-  gc <- reticulate::import("geocoder")  ## almost sure this is not where we want this not sure where to put it yet
+  gc <- reticulate::import("geocoder")  ## almost sure this is not where we want this -- not sure where to put it yet
 
   addr <- rlang::enexpr(address)
   nm <- rlang::enexpr(name)
   addr_vec <- x %>% dplyr::select(!!addr) %>% unname() %>% purrr::as_vector()
   nm_vec <- x %>% dplyr::select(!!nm) %>% unname() %>% purrr::as_vector()
-  result <- gc$arcgis(address)$json
+  result <- gc$arcgis(addr_vec)$json
 
   latlons <- tibble(
     name = nm_vec,
