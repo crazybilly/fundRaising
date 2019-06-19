@@ -57,24 +57,24 @@ make_concat_address <- function(x, addr_line_col, addr_city_col, addr_postal_col
 #' @export
 #'
 
-get_lat_lon <- function(x, address, name) {
+get_lat_lon <- function(addr_vec) {
 
   gc <- reticulate::import("geocoder")  ## almost sure this is not where we want this -- not sure where to put it yet
 
-  addr <- rlang::enexpr(address)
-  nm <- rlang::enexpr(name)
-  addr_vec <- x %>% dplyr::select(!!addr) %>% unname() %>% purrr::as_vector()
-  nm_vec <- x %>% dplyr::select(!!nm) %>% unname() %>% purrr::as_vector()
+  #addr <- rlang::enexpr(address)
+  #nm <- rlang::enexpr(name)
+  #addr_vec <- x %>% dplyr::select(!!addr) %>% unname() %>% purrr::as_vector()
+  #nm_vec <- x %>% dplyr::select(!!nm) %>% unname() %>% purrr::as_vector()
   result <- gc$arcgis(addr_vec)$json
 
-  latlons <- tibble(
-    name = nm_vec,
-    lon = result$lng,
-    lat = result$lat,
-    geo_add = result$address
-  )
+  # latlons <- tibble(
+  #   name = nm_vec,
+  #   lon = result$lng,
+  #   lat = result$lat,
+  #   geo_add = result$address
+  # )
 
-  return(latlons)
+  return(result)
 }
 
 #' Get a block id for every longitude and latitude value - a helper function that is iterated through to make a table
