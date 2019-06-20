@@ -49,32 +49,41 @@ make_concat_address <- function(x, addr_line_col, addr_city_col, addr_postal_col
 #'
 #' @description creates a data frame with latitude and longitude values based on address data
 #'
-#' @param x a data frame
-#' @param address a column from the data frame containing a concatenated address line
-#' @param name a column from the data frame containing a name field with a full name
+#' @param address a vector containing the concatenated address as a string most likely in the form of data dollar sign column
+#' @param name a vector containing the full name for the record as a string most likely in the form of data dollar sign column
 #'
 #' @return a data frame with latitide and longitude data for every address
 #' @export
 #'
 
-get_lat_lon <- function(addr_vec) {
+get_lat_lon <- function(name,address) {
 
-  gc <- reticulate::import("geocoder")  ## almost sure this is not where we want this -- not sure where to put it yet
+  gc <- reticulate::import("geocoder")  # this can't be where this goes but where ..... \_(~)_/
 
-  #addr <- rlang::enexpr(address)
-  #nm <- rlang::enexpr(name)
-  #addr_vec <- x %>% dplyr::select(!!addr) %>% unname() %>% purrr::as_vector()
-  #nm_vec <- x %>% dplyr::select(!!nm) %>% unname() %>% purrr::as_vector()
-  result <- gc$arcgis(addr_vec)$json
+  addrs <- vector()
+  lats <- vector()
+  lngs <- vector()
 
-  # latlons <- tibble(
-  #   name = nm_vec,
-  #   lon = result$lng,
-  #   lat = result$lat,
-  #   geo_add = result$address
-  # )
+  names <- name
 
-  return(result)
+  for(i in 1:length(address)) {
+    res <- gc$arcgis(address[i])$json
+    addr <- res$address
+    addrs <- c(addrs,addr)
+    lat <- res$lat
+    lats <- c(lats,lat)
+    lng <- res$lng
+    lngs <- c(lngs,lng)
+  }
+
+  ll_tbl <- tibble(
+    ll_names = names,
+    ll_address = addrs,
+    ll_lat = lats,
+    ll_lng = lngs
+  )
+
+  return(ll_tbl)
 }
 
 #' Get a block id for every longitude and latitude value - a helper function that is iterated through to make a table
