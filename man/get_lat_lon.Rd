@@ -4,14 +4,12 @@
 \alias{get_lat_lon}
 \title{Get the latitide and longitude values based on address data}
 \usage{
-get_lat_lon(x, address, name)
+get_lat_lon(name, address)
 }
 \arguments{
-\item{x}{a data frame}
+\item{name}{a vector containing the full name for the record as a string most likely in the form of data dollar sign column}
 
-\item{address}{a column from the data frame containing a concatenated address line}
-
-\item{name}{a column from the data frame containing a name field with a full name}
+\item{address}{a vector containing the concatenated address as a string most likely in the form of data dollar sign column}
 }
 \value{
 a data frame with latitide and longitude data for every address
