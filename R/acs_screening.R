@@ -101,10 +101,10 @@ get_lat_lon <- function(name,address) {
 get_block_ids <- function(lat, lon) {
   fcc <- "https://geo.fcc.gov/api/census/area?lat=%f&lon=%f&format=json"
   fcc <- sprintf(fcc, lat, lon)
-  json <- read_html(fcc)
-  json <- fromJSON(fcc)
+  json <- xml2::read_html(fcc)
+  json <- jsonlite::fromJSON(fcc)
 
-  tibble (
+  dplyr::tibble (
     block_id = json$results$block_fips,
     fcc_lat = json$input$lat,
     fcc_lon = json$input$lon
@@ -126,7 +126,7 @@ get_block_ids <- function(lat, lon) {
 
 get_block_id_table <- function(result){
 
-  blocks <- map2(result$lat,result$lon,get_block_ids)
+  blocks <- purrr::map2(result$lat,result$lon,get_block_ids)
   return(blocks)
 
 }

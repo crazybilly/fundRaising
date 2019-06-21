@@ -16,7 +16,8 @@ Imports:
     ggmap,
     tibble,
     reticulate,
-    xml2
+    xml2,
+    jsonlite
 License: GPL3
 Encoding: UTF-8
 LazyData: true
