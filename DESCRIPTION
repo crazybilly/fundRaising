@@ -17,7 +17,8 @@ Imports:
     tibble,
     reticulate,
     xml2,
-    jsonlite
+    jsonlite,
+    glue
 License: GPL3
 Encoding: UTF-8
 LazyData: true

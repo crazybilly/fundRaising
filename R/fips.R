@@ -46,7 +46,7 @@ get_FIPS <- function(lat, long,sleep = 0.025){
 #'
 #' @param fips FIPS code, as a 5 to 15 character string, containing only numeric characters
 #'
-#' @return
+#' @return Named list of FIPS codes.
 #' @export
 #'
 #' @examples
