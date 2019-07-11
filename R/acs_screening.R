@@ -101,10 +101,10 @@ get_lat_lon <- function(name,address) {
 get_block_ids <- function(lat, lon) {
   fcc <- "https://geo.fcc.gov/api/census/area?lat=%f&lon=%f&format=json"
   fcc <- sprintf(fcc, lat, lon)
-  json <- read_html(fcc)
-  json <- fromJSON(fcc)
+  json <- xml2::read_html(fcc)
+  json <- jsonlite::fromJSON(fcc)
 
-  tibble (
+  dplyr::tibble (
     block_id = json$results$block_fips,
     fcc_lat = json$input$lat,
     fcc_lon = json$input$lon
@@ -126,7 +126,102 @@ get_block_ids <- function(lat, lon) {
 
 get_block_id_table <- function(result){
 
-  blocks <- map2(result$lat,result$lon,get_block_ids)
+  blocks <- purrr::map2(result$lat,result$lon,get_block_ids)
   return(blocks)
 
+}
+
+
+
+#' Obtain 5-Year American Community Survey Estimates
+#'
+#' @description The U.S. Census Bureau has published 5-year esimates of
+#'   demographic data since 2009. The data is aggregated at the national, state,
+#'   county, census tract, and census block group levels.
+#'
+#'   This function queries the
+#'   \href{https://www.census.gov/data/developers/data-sets/acs-5year.html}{Census
+#'    Bureau API} based on FIPS codes for various geographies. Substituting a
+#'   wildcard character \code{"*"} instead of a FIPS code returns all values
+#'   within the parent geography (i.e. \code{tract = "*"} will return data for
+#'   all tracts within a county).
+#'
+#'
+#'   The API limits the number of queries for users who lack an API key. A key
+#'   can be obtained \href{https://api.census.gov/data/key_signup.html}{here}.
+#'
+#'
+#' @param var Variables to query from the ACS. For a list of the available
+#'   variables and codes (for the 2017 ACS), see the
+#'   \href{https://api.census.gov/data/2017/acs/acs5/variables.html}{Official
+#'   Documentation}. Defaults to Median Household Income (B19013_00E) and Median
+#'   Home Value (Owner-Occupied Units) (B25077_001E). Supports groups.
+#' @param year Four-digit year. Defaults to the most recent data, for 2017.
+#' @param state Two-digit state FIPS code. Alternatively, \code{"us"} for
+#'   national-level statistics. Supports wildcard string (\code{"*"}).
+#' @param county Three-digit county FIPS code. Supports wildcard string
+#'   (\code{"*"}).
+#' @param tract Five-digit census tract FIPS code. Supports wildcard string
+#'   (\code{"*"}).
+#' @param blkgrp One-digit blog group FIPS code.
+#' @param key (optional) Developer key.
+#'
+#' @return Tibble of data points and FIPS codes, one line per valid input geography.
+#' @export
+#'
+query_acs <- function(var = c("B19013_001E", "B25077_001E"),
+                      year = NULL,
+                      state,
+                      county = NULL,
+                      tract = NULL,
+                      blkgrp = NULL,
+                      key = NULL) {
+
+  # Validate the Year, defaulting to 2017.
+  year <- match.arg(year, c(2017:2009))
+
+  # Format the Variables
+  names <- paste("NAME", paste(var, collapse = ","), sep = ",")
+
+
+  base_url <- glue::glue("https://api.census.gov/data/{year}/acs/acs5?get={names}&for=")
+
+
+  if (!is.null(blkgrp)) {
+
+    url <- glue::glue("{base_url}block%20group:{blkgrp}&in=state:{state}%20county:{county}%20tract:{tract}")
+
+  } else if (!is.null(tract)) {
+
+    url <- glue::glue("{base_url}tract:{tract}&in=state:{state}%20county:{county}")
+
+  } else if (!is.null(county)) {
+
+    url <- glue::glue("{base_url}county:{county}&in=state:{state}")
+
+  } else if (state == "us") {
+
+    url <- glue::glue("{base_url}us")
+
+  } else {
+    url <- glue::glue("{base_url}state:{state}")
+  }
+
+
+  # Include API key, if provided.
+  if (!is.null(key)) {
+    link <- paste0(url, "&key=", key)
+  } else {
+    link <- url
+  }
+
+  # Fetch Results
+  results <- jsonlite::fromJSON(link)
+
+  # The first row of results contains the headers. Set the names and remove this row.
+  colnames(results) <- results[1, ]
+
+  results <- dplyr::as_tibble(results[-1, ])
+
+  return(results)
 }
