@@ -4,8 +4,13 @@
 \alias{abbrdollars}
 \title{Abbreviate Dollars}
 \usage{
-abbrdollars(x, thousandabbr = "K", millionabbr = "M",
-  billionabbr = "B", currency = "$")
+abbrdollars(
+  x,
+  thousandabbr = "K",
+  millionabbr = "M",
+  billionabbr = "B",
+  currency = "$"
+)
 }
 \arguments{
 \item{x}{a numeric vector of dollar values}

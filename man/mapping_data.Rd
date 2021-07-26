@@ -4,7 +4,8 @@
 \name{mapping_data}
 \alias{mapping_data}
 \title{Mapping Data}
-\format{A data frame with 300 rows and 36 variables:
+\format{
+A data frame with 300 rows and 36 variables:
 \describe{
   \item{ID}{the unique identifier for each constituent}
   \item{Name}{the name of the constituent}
@@ -42,7 +43,8 @@
   \item{Phone Count}{the number of phone calls with the constituent}
   \item{FTF Visit Count}{the number of face to face visits with the constituent}
   \item{Gift Count}{the number of gifts from the constituent}
-}}
+}
+}
 \source{
 \url{https://www.kaggle.com/michaelpawlus/fundraising-data}
 }

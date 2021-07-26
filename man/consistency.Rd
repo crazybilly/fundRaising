@@ -4,8 +4,7 @@
 \alias{consistency}
 \title{Calculate the consistency rate for constituents (the percentage of time they have given during a defined range of time)}
 \usage{
-consistency(data, id_col, fy_col, threshold = 1, alt_year = NA,
-  max_year = 0)
+consistency(data, id_col, fy_col, threshold = 1, alt_year = NA, max_year = 0)
 }
 \arguments{
 \item{data}{a data frame}

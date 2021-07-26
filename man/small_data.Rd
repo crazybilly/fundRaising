@@ -4,7 +4,8 @@
 \name{small_data}
 \alias{small_data}
 \title{Small Alumni Dataset}
-\format{A data frame with 2878 rows and 8 variables:
+\format{
+A data frame with 2878 rows and 8 variables:
 \describe{
   \item{coreid}{a unique id for an alumni record}
   \item{aff_total}{a calculated affinity score - mark of how connected an alum is to the university}
@@ -14,7 +15,8 @@
   \item{Major}{the major for the alumnus}
   \item{fy14}{the total giving for the alumnus during fiscal year 2014}
   \item{donor}{a binary flag of 1 or 0 to indicate if the alumnus is a donor}
-}}
+}
+}
 \source{
 \url{https://www.kaggle.com/michaelpawlus/fundraising-data}
 }

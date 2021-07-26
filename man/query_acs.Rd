@@ -4,8 +4,15 @@
 \alias{query_acs}
 \title{Obtain 5-Year American Community Survey Estimates}
 \usage{
-query_acs(var = c("B19013_001E", "B25077_001E"), year = NULL, state,
-  county = NULL, tract = NULL, blkgrp = NULL, key = NULL)
+query_acs(
+  var = c("B19013_001E", "B25077_001E"),
+  year = NULL,
+  state,
+  county = NULL,
+  tract = NULL,
+  blkgrp = NULL,
+  key = NULL
+)
 }
 \arguments{
 \item{var}{Variables to query from the ACS. For a list of the available

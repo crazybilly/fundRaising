@@ -4,11 +4,13 @@
 \name{survey_data}
 \alias{survey_data}
 \title{Survey Responses}
-\format{A data frame with 30 rows and 2 variables:
+\format{
+A data frame with 30 rows and 2 variables:
 \describe{
   \item{ID Number}{the unique identifier for each survey taker}
   \item{Survey Response}{a numeric value reflecting a survey response}
-}}
+}
+}
 \source{
 \url{https://www.kaggle.com/michaelpawlus/fundraising-data}
 }

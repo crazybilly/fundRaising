@@ -33,7 +33,7 @@ make_full_name <- function(x, first_name_col, last_name_col){
 make_concat_address <- function(x, addr_line_col, addr_city_col, addr_postal_col){
   ##load("data/zipcode.rda")
   ## think of a way to remove the zipcode object and not return to users
-  data("zipcode")
+  # data("zipcode") # should already be available since it's in the data/ dir (though I'm sure it's going stale)
   adln <- rlang::enexpr(addr_line_col)
   adct <- rlang::enexpr(addr_city_col)
   adpc <- rlang::enexpr(addr_postal_col)

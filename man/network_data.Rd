@@ -4,11 +4,13 @@
 \name{network_data}
 \alias{network_data}
 \title{Network Dataset}
-\format{A data frame with 30 rows and 2 variables:
+\format{
+A data frame with 30 rows and 2 variables:
 \describe{
   \item{from}{the starting point for the relationship}
   \item{to}{the ending point for the relationship}
-}}
+}
+}
 \source{
 \url{https://www.kaggle.com/michaelpawlus/fundraising-data}
 }

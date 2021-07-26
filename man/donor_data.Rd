@@ -4,7 +4,8 @@
 \name{donor_data}
 \alias{donor_data}
 \title{Donor Data}
-\format{A data frame with 3451 rows and 23 variables:
+\format{
+A data frame with 3451 rows and 23 variables:
 \describe{
   \item{ID}{the unique identifier for each constituent}
   \item{ZIPCODE}{the ZIP code for the constituent}
@@ -29,7 +30,8 @@
   \item{TotalGiving}{the total giving for the constituent}
   \item{DONOR_IND}{a binary flag indicating if a constituent is a donor}
   \item{BIRTH_DATE}{the birth date for the constituent}
-}}
+}
+}
 \source{
 \url{https://www.kaggle.com/michaelpawlus/fundraising-data}
 }

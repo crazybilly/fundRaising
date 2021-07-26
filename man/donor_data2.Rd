@@ -4,7 +4,8 @@
 \name{donor_data2}
 \alias{donor_data2}
 \title{Donor Data 2}
-\format{A data frame with 5000 rows and 16 variables:
+\format{
+A data frame with 5000 rows and 16 variables:
 \describe{
   \item{ID Number}{the unique identifier for each alumnus}
   \item{Lifetime HC}{the lifetime hard credit total for the alumnus}
@@ -22,7 +23,8 @@
   \item{Prefix is Ms.}{a binary flag to indicate if the alumnus prefix is Ms}
   \item{Prefix is Dr.}{a binary flag to indicate if the alumnus prefix is Dr}
   \item{Prefix is Mrs.}{a binary flag to indicate if the alumnus prefix is Mrs}
-}}
+}
+}
 \source{
 \url{https://www.kaggle.com/michaelpawlus/fundraising-data}
 }

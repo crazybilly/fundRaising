@@ -4,7 +4,8 @@
 \name{contact_data}
 \alias{contact_data}
 \title{Sample Contact Reports}
-\format{A data frame with 196 rows and 7 variables:
+\format{
+A data frame with 196 rows and 7 variables:
 \describe{
   \item{Staff Name}{the name of the development officer}
   \item{Method}{the contact method: Email, Letter, Phone}
@@ -13,7 +14,8 @@
   \item{Substantive}{flag to indicate if contact was substantive}
   \item{Donor}{the name of the donor or prospect}
   \item{Outcome}{flag to indicate the outcome of the contact}
-}}
+}
+}
 \source{
 \url{https://www.kaggle.com/michaelpawlus/fundraising-data}
 }
